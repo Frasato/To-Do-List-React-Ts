@@ -10,3 +10,8 @@
     vertical-align: baseline;
     font-family: sans-serif;
 }
+
+body{
+    height: 100vh;
+    background-color: #111625;
+}
