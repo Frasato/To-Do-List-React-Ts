@@ -11,7 +11,7 @@ const ListItems = (Props: Item) =>{
             </TextContainer>
             <div className="iconsCheck">
                 <input type="checkbox"/>
-                <FaTrash className="trashIcon"/>
+                <FaTrash className="trashIcon" onClick={Props.onClick}/>
             </div>
         </ItemContainer>
     )
