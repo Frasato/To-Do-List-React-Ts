@@ -21,6 +21,7 @@ export const CreateArea = styled.div`
     padding: 50px 30px 30px 30px;
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 20px;
 `;
 
@@ -53,6 +54,16 @@ export const CreateButton = styled.button`
     &:hover{
         opacity: 0.9;
     }
+`;
+
+export const LengthTitle = styled.h1`
+    color: white;
+    font-size: 12px;
+`;
+
+export const LengthDesc = styled.h1`
+    color: white;
+    font-size: 12px;
 `;
 
 export const Separator = styled.div`

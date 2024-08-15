@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ContainerApp, CreateArea, CreateButton, InputTitle, Items, ListArea, Separator, TextLoading } from './App.styles';
+import { ContainerApp, CreateArea, CreateButton, InputTitle, Items, LengthDesc, LengthTitle, ListArea, Separator, TextLoading } from './App.styles';
 import ListItems from './components/ListItem/ListItem';
 import { IoIosAddCircle } from 'react-icons/io';
 import { ItemsList } from './@types/itemsList';
@@ -44,7 +44,13 @@ const App = () => {
   return (
     <ContainerApp>
       <CreateArea>
+        {title.length > 0 &&
+          <LengthTitle>{title.length}/14</LengthTitle>
+        }
         <InputTitle placeholder='Title...' value={title} onChange={e => setTitle(e.target.value)}/>
+        {description.length > 0 &&
+          <LengthDesc>{description.length}/60</LengthDesc>
+        }
         <InputTitle placeholder='Description...' value={description} onChange={e => setDescription(e.target.value)}/>
         <CreateButton onClick={createItem}>Create <IoIosAddCircle className='icon'/></CreateButton>
       </CreateArea>
