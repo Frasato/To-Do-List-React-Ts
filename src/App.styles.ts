@@ -1,5 +1,15 @@
-import { styled } from "styled-components";
+import { keyframes, styled } from "styled-components";
 import * as themeColors from "./constants/colors";
+
+const opacityAnimation = keyframes`
+    0%{
+        opacity: 1;
+    }50%{
+        opacity: 0.2;
+    }100%{
+        opacity: 0.9;
+    }
+`;
 
 export const ContainerApp = styled.div``;
 
@@ -62,4 +72,12 @@ export const Items = styled.div`
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 40px;
+`;
+
+export const TextLoading = styled.h1`
+    color: ${themeColors.secundaryColor};
+    font-size: 30px;
+    text-align: center;
+    font-weight: bold;
+    animation: ${opacityAnimation} 2s linear infinite;
 `;
