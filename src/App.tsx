@@ -14,12 +14,19 @@ const App = () => {
 
   function createItem(): void{
     setCreateItemLoading(true);
-    const item: ItemsList = {
-      title: title,
-      description: description
+    let item: ItemsList = {title: '', description: ''}
+
+    if(title != '' && description != ''){
+      item = {
+        title: title,
+        description: description,
+      }
+      setItems([...items, item]);
     }
-    setItems([...items, item]);
+
     setCreateItemLoading(false);
+    setTitle('');
+    setDescription('');
   }
 
   function deleteItem(id: number): void{
@@ -45,13 +52,13 @@ const App = () => {
       {items.length == 0 && <TheresNoImg />}
 
       <ListArea>
+        <Items>
           {createItemLoading? <TextLoading>Creating Items...</TextLoading> : items.map((it, index) =>{
             return(
-              <Items>
                 <ListItems key={index} title={it.title} description={it.description} onClick={() => deleteItem(index)}/>
-              </Items>
             )
           })}
+        </Items>
       </ListArea>
     </ContainerApp>
   )
