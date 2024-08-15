@@ -17,16 +17,18 @@ const App = () => {
     let item: ItemsList = {title: '', description: ''}
 
     if(title != '' && description != ''){
-      item = {
-        title: title,
-        description: description,
+      if(title.length <= 14 && description.length <= 60){
+        item = {
+          title: title,
+          description: description,
+        }
+        setItems([...items, item]);
+        setTitle('');
+        setDescription('');
       }
-      setItems([...items, item]);
     }
 
     setCreateItemLoading(false);
-    setTitle('');
-    setDescription('');
   }
 
   function deleteItem(id: number): void{
