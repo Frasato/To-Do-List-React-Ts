@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { ContainerApp, CreateArea, CreateButton, InputTitle, Items, LengthDesc, LengthTitle, ListArea, Separator, TextLoading } from './App.styles';
 import ListItems from './components/ListItem/ListItem';
 import { IoIosAddCircle } from 'react-icons/io';
@@ -11,6 +11,19 @@ const App = () => {
   const [description, setDescription] = useState<string>('');
   const [items, setItems] = useState<ItemsList[]>([]);
   const [createItemLoading, setCreateItemLoading] = useState<boolean>(false);
+
+  useEffect((): void =>{
+    const storage = localStorage.getItem('ItemsList');
+
+    if(storage){
+      const convertedStorage: ItemsList[] = JSON.parse(storage);
+      setItems(convertedStorage);
+    }
+  },[]);
+
+  useEffect(():void =>{
+    localStorage.setItem('ItemsList', JSON.stringify(items));
+  },[items]);
 
   function createItem(): void{
     setCreateItemLoading(true);
