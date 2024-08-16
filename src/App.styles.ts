@@ -15,11 +15,11 @@ export const ContainerApp = styled.div``;
 
 export const CreateArea = styled.div`
     height: 100px;
-    width: 700px;
+    width: 61%;
     margin: auto;
-    margin-bottom: 30px;
     padding: 50px 30px 30px 30px;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     gap: 20px;
@@ -33,6 +33,11 @@ export const InputTitle = styled.input`
     width: 300px;
     height: 40px;
     padding: 10px;
+
+    @media only screen and (max-width: 768px) {
+        width: 400px;
+        height: 50px;
+    }
 `;
 
 export const CreateButton = styled.button`
@@ -54,6 +59,11 @@ export const CreateButton = styled.button`
     &:hover{
         opacity: 0.9;
     }
+
+    @media only screen and (max-width: 768px) {
+        width: 170px;
+        height: 50px;
+    }
 `;
 
 export const LengthTitle = styled.h1`
@@ -69,13 +79,17 @@ export const LengthDesc = styled.h1`
 export const Separator = styled.div`
     background-color: ${themeColors.secundaryColor};
     height: 2px;
-    width: 900px;
-    margin: auto;
+    width: 60%;
+    margin: 30px auto 0;
+
+    @media only screen and (max-width: 768px) {
+        margin: 21vh auto 0;
+    }
 `;
 
 export const ListArea = styled.div`
     margin: auto;
-    max-width: 1400px;
+    max-width: 90%;
     padding: 30px 0;
 `;
 
@@ -83,6 +97,11 @@ export const Items = styled.div`
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 40px;
+
+    @media only screen and (max-width: 768px) {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 20px;
+    }
 `;
 
 export const TextLoading = styled.h1`

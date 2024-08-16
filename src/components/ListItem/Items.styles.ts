@@ -26,6 +26,24 @@ export const ItemContainer = styled.div`
             }
         }
     }
+
+    @media only screen and (max-width: 768px) {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+
+        .iconsCheck{
+            input[type='checkbox']{
+            height: 20px;
+            width: 20px;
+            margin-right: 25px;
+            }
+            .trashIcon{
+                font-size: 20px;
+            }
+        }
+    }
+
 `;
 
 export const TextContainer = styled.div``;
