@@ -10,6 +10,9 @@ export const ItemContainer = styled.div`
     border-radius: 15px;
 
     .iconsCheck{
+        display: flex;
+        justify-content: space-between;
+
         input[type='checkbox']{
             height: 15px;
             width: 15px;
@@ -24,6 +27,19 @@ export const ItemContainer = styled.div`
             &:hover{
                 opacity: 0.8;
             }
+        }
+
+        .toLeft{
+            margin: 0 20px 0 0;
+            font-size: 20px;
+            color: white;
+            cursor: pointer;
+        }
+
+        .toRight{
+            font-size: 20px;
+            color: white;
+            cursor: pointer;
         }
     }
 
@@ -56,6 +72,6 @@ export const TextTitle = styled.h1`
 `;
 
 export const TextDescription = styled.p`
-    color: ${themeColors.secundaryColor};
+    color: rgba(255, 255, 255, 0.4);
     margin-bottom: 20px;
 `;
